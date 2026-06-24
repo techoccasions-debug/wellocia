@@ -1500,3 +1500,147 @@ footer hr {
         padding: 10px 0 !important;
     }
 }
+/* =========================
+   PREMIUM THANK YOU CARD
+========================= */
+
+.thank-you-card{
+    position:relative;
+    background:linear-gradient(145deg,#ffffff,#f7f7f3);
+    border-radius:22px;
+    padding:60px 40px;
+    text-align:center;
+    overflow:hidden;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    transition: all .4s ease;
+}
+
+/* soft animated glow */
+.thank-you-card::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    right:-120px;
+    width:260px;
+    height:260px;
+    background:radial-gradient(circle, rgba(30,94,56,0.12), transparent 70%);
+    filter: blur(10px);
+}
+
+/* your existing accent circle upgraded */
+.thank-you-card::after{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:radial-gradient(circle, rgba(201,134,90,0.12), transparent 70%);
+    border-radius:50%;
+    bottom:-100px;
+    left:-80px;
+}
+
+/* =========================
+   SUCCESS ICON (premium float)
+========================= */
+
+.success-icon{
+    width:92px;
+    height:92px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#1E5E38,#2d7a4b);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:40px;
+    box-shadow:
+        0 18px 40px rgba(30,94,56,.35),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+    animation: floatIcon 4s ease-in-out infinite;
+}
+
+/* subtle floating animation */
+@keyframes floatIcon{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+}
+
+/* =========================
+   TEXT STYLING
+========================= */
+
+.thank-you-card h3{
+    color:#162B1E;
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:-0.5px;
+    margin-bottom:12px;
+}
+
+.thank-you-card p{
+    color:#5f5f5f;
+    font-size:16.5px;
+    line-height:1.9;
+    max-width:520px;
+    margin:0 auto 30px;
+}
+
+/* =========================
+   BUTTON (premium CTA)
+========================= */
+
+.join-channel-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 36px;
+    border-radius:999px;
+    text-decoration:none;
+    background:linear-gradient(135deg,#1E5E38,#2d7a4b);
+    color:#fff;
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:0.3px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:
+        0 18px 40px rgba(30,94,56,.25);
+    transition: all .35s ease;
+}
+
+/* glossy overlay effect */
+.join-channel-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    transition:0.6s;
+}
+
+.join-channel-btn:hover::before{
+    left:100%;
+}
+
+.join-channel-btn:hover{
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:
+        0 25px 55px rgba(30,94,56,.35);
+}
+
+/* click feedback */
+.join-channel-btn:active{
+    transform:translateY(-2px) scale(0.98);
+}
