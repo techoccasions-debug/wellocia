@@ -1366,9 +1366,9 @@ footer hr {
 
 /* Logo tuning */
 .logo-img-nav {
-    height: 70px !important;   /* reduced from 120px */
+    height: 90px !important;   /* reduced from 120px */
     width: auto !important;
-    max-height: 70px !important;
+    max-height: 90px !important;
 }
 
 /* Nav links compact */
