@@ -1644,3 +1644,407 @@ footer hr {
 .join-channel-btn:active{
     transform:translateY(-2px) scale(0.98);
 }
+/*About us*/
+
+/* ==========================================
+   ABOUT HERO
+========================================== */
+
+/* ==========================================
+   ABOUT PAGE (WELLOCIA PREMIUM SYSTEM)
+========================================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes softGlow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* =========================
+   PAGE HEADER (ULTRA PREMIUM)
+========================= */
+
+/* =========================
+   PAGE HEADER (COMPACT NAVY)
+========================= */
+
+.page-header {
+    position: relative;
+    text-align: center;
+
+    /* reduced height */
+    padding: 70px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #0b1f3a 0%,
+        #102a4c 50%,
+        #0a1a33 100%
+    );
+
+    overflow: hidden;
+}
+
+/* soft glow (smaller + less aggressive) */
+.page-header::before {
+    content: "";
+    position: absolute;
+    top: -140px;
+    left: -140px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(
+        circle,
+        rgba(201, 134, 90, 0.18),
+        transparent 70%
+    );
+    animation: floatGlow 7s ease-in-out infinite;
+}
+
+.page-header::after {
+    content: "";
+    position: absolute;
+    bottom: -140px;
+    right: -140px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(
+        circle,
+        rgba(46, 125, 79, 0.15),
+        transparent 70%
+    );
+    animation: floatGlow 8s ease-in-out infinite;
+}
+
+/* heading (smaller for balance) */
+.page-header h1 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* breadcrumb */
+.page-header .breadcrumb {
+    background: transparent;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.page-header .breadcrumb-item.active {
+    color: #ffffff;
+}
+
+/* animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatGlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(18px); }
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 55px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+}
+/* =========================
+   COMPANY OVERVIEW (LUXURY CARD FEEL)
+========================= */
+
+.overview-img {
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+
+    box-shadow: 0 25px 60px rgba(0,0,0,0.10);
+
+    transition: all 0.6s ease;
+}
+
+.overview-img img {
+    transition: 0.6s ease;
+    width: 100%;
+}
+
+.overview-img:hover img {
+    transform: scale(1.08);
+}
+
+.overview-img:hover {
+    box-shadow: 0 35px 90px rgba(30,94,56,0.18);
+    transform: translateY(-6px);
+}
+
+/* stats cards */
+.stat-box {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+
+    transition: 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 50px rgba(30,94,56,0.12);
+}
+
+.stat-box .num {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.stat-box .label {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* =========================
+   VISION / MISSION (FLOAT EFFECT)
+========================= */
+
+.vm-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid var(--border);
+
+    transition: all 0.5s ease;
+    position: relative;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.vm-card:hover {
+    transform: translateY(-12px) scale(1.01);
+    box-shadow: 0 30px 70px rgba(30,94,56,0.15);
+}
+
+.vm-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    animation: softGlow 4s infinite ease-in-out;
+}
+
+/* =========================
+   DIRECTOR SECTION (PREMIUM STORY CARD)
+========================= */
+
+.director-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid var(--accent);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+
+    transition: 0.4s ease;
+}
+
+.director-photo:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.quote-mark {
+    font-size: 90px;
+    color: var(--accent);
+    opacity: 0.15;
+
+    position: absolute;
+    top: -50px;
+    left: -10px;
+}
+
+/* =========================
+   CORE VALUES (INTERACTIVE CARDS)
+========================= */
+
+.value-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    transition: all 0.4s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -80px;
+    right: -80px;
+
+    background: radial-gradient(circle, rgba(30,94,56,0.12), transparent 70%);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.value-card:hover::before {
+    opacity: 1;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(30,94,56,0.12);
+}
+
+/* =========================
+   WHY SECTION (DARK PREMIUM GRID)
+========================= */
+
+.why-section {
+    background: linear-gradient(135deg, #0d1f14, #162B1E);
+    color: #fff;
+    padding: 110px 0;
+}
+
+.why-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+
+    padding: 25px;
+    transition: all 0.5s ease;
+
+    backdrop-filter: blur(12px);
+}
+
+.why-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--accent);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+.why-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+/* =========================
+   BUTTONS (GLOBAL LIFT)
+========================= */
+
+.btn {
+    transition: all 0.4s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(30,94,56,0.25);
+}
+
+/* =========================
+   SCROLL FEEL (SMOOTH PREMIUM UX)
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.info-box{
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+}
+
+.info-box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.10);
+}
+
+.info-box .icon{
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.info-box .label{
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+}
+.why-card{
+    background: rgba(255,255,255,0.06); /* or your existing bg */
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 16px;
+    padding: 24px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.why-card:hover{
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.10);
+}
+
+.why-card h5{
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.why-card p{
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+    line-height: 1.6;
+}
