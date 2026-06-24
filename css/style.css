@@ -1206,3 +1206,200 @@ footer hr {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* =========================
+   RESPONSIVE FIX SYSTEM
+========================= */
+
+/* Large tablets */
+@media (max-width: 1200px) {
+    .carousel-caption h1 {
+        font-size: 42px;
+    }
+
+    .section-title h2 {
+        font-size: 40px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    /* Navbar */
+    .navbar-light .navbar-nav .nav-link {
+        padding: 12px 0;
+        font-size: 14px;
+    }
+
+    .logo-img-nav {
+        height: 85px !important;
+    }
+
+    /* Hero */
+    .carousel-caption {
+        padding: 0 5%;
+    }
+
+    .carousel-caption h1 {
+        font-size: 34px;
+    }
+
+    /* Grids → stack */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sections spacing */
+    .video-form-section,
+    .about-premium {
+        padding: 70px 0;
+    }
+
+    /* Section title */
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    /* Service cards */
+    .service-item {
+        height: auto;
+        padding: 30px 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    /* Navbar logo */
+    .logo-img-nav {
+        height: 65px !important;
+    }
+
+    /* Hero text */
+    .carousel-caption h1 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .carousel-caption h5 {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    /* Section spacing */
+    .py-6,
+    .pt-6,
+    .pb-6 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* Cards full width spacing */
+    .about-card,
+    .card-box,
+    .form-box {
+        padding: 20px;
+    }
+
+    /* Industry ticker */
+    .ticker-track span {
+        font-size: 13px;
+        margin-right: 25px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 576px) {
+
+    /* Hero */
+    .carousel-caption h1 {
+        font-size: 22px;
+    }
+
+    /* Section titles */
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    /* Form */
+    .form-box h4 {
+        font-size: 22px;
+    }
+
+    /* Navbar */
+    .logo-img-nav {
+        height: 55px !important;
+    }
+
+    /* Reduce padding further */
+    .video-form-section,
+    .about-premium {
+        padding: 50px 0;
+    }
+}
+/* =========================
+   COMPACT PREMIUM NAVBAR
+========================= */
+
+.navbar {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    min-height: 64px;
+}
+
+/* Brand alignment fix */
+.navbar-brand {
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo tuning */
+.logo-img-nav {
+    height: 70px !important;   /* reduced from 120px */
+    width: auto !important;
+    max-height: 70px !important;
+}
+
+/* Nav links compact */
+.navbar-light .navbar-nav .nav-link {
+    padding: 10px 12px !important;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+}
+
+/* Remove extra vertical stretch in sticky mode */
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 10px 12px !important;
+}
+
+/* Center alignment */
+.navbar .container {
+    align-items: center;
+}
+
+/* Mobile cleanup */
+@media (max-width: 991px) {
+    .navbar {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    .logo-img-nav {
+        height: 55px !important;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        padding: 10px 0 !important;
+    }
+}
