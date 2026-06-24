@@ -18,7 +18,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
 </head>
 
@@ -112,7 +112,37 @@
             </button>
         </div>
     </div>
+<!-- Industries We Serve -->
+<div class="industry-ticker">
+    <div class="ticker-track">
+        <span>Power Sector</span>
+        <span>Oil & Gas</span>
+        <span>IT Industries</span>
+        <span>Manufacturing</span>
+        <span>BPO</span>
+        <span>Corporate Services</span>
+        <span>Transformer Industry</span>
+        <span>Executive Search</span>
+        <span>HR Compliance</span>
+        <span>Staffing Solutions</span>
+        <span>Background Verification</span>
+        <span>Labour Law</span>
 
+        <!-- Duplicate for seamless loop -->
+        <span>Power Sector</span>
+        <span>Oil & Gas</span>
+        <span>IT Industries</span>
+        <span>Manufacturing</span>
+        <span>BPO</span>
+        <span>Corporate Services</span>
+        <span>Transformer Industry</span>
+        <span>Executive Search</span>
+        <span>HR Compliance</span>
+        <span>Staffing Solutions</span>
+        <span>Background Verification</span>
+        <span>Labour Law</span>
+    </div>
+</div>
     <!-- ══════════════════════════════════════════════════════
          UPDATED ABOUT SECTION — YouTube Video + Google Form
     ══════════════════════════════════════════════════════ -->
@@ -120,14 +150,17 @@
 
   <div class="container">
 
-    <div class="section-title text-center">
+    <div class="section-title text-center"  data-aos="fade-up">
       <h2>About <span>Wellocia</span></h2>
+<p class="section-subtitle">
+Connecting businesses with exceptional talent through strategic recruitment and workforce solutions.
+</p>
     </div>
 
     <div class="row g-5 align-items-stretch">
 
       <!-- LEFT: VIDEO -->
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-right">
         <div class="card-box">
 
           <div class="video-wrapper">
@@ -137,16 +170,18 @@
             </iframe>
           </div>
 
-          <div class="info-below">
-            <h5>Who We Are</h5>
-            <p>Founded in 2007 · 500+ Placements · 100+ Clients</p>
-          </div>
+          <div class="about-points">
+    <div class="point">✓ Specialized HR & Recruitment Solutions</div>
+    <div class="point">✓ Executive Search & Talent Acquisition</div>
+    <div class="point">✓ Industry-Focused Hiring Expertise</div>
+    <div class="point">✓ Personalized Workforce Consulting</div>
+</div>
 
         </div>
       </div>
 
       <!-- RIGHT: FORM -->
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-left">
         <div class="card-box form-box">
 
           <h4>Connect With Us</h4>
@@ -330,10 +365,7 @@
         <p class="m-0">&copy; Wellocia. All Rights Reserved. Designed by <a class="text-secondary border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
     </div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </a>
+    
 
     <!-- WhatsApp Float -->
     <a href="https://wa.me/918889998500" class="whatsapp-float" target="_blank">
@@ -347,7 +379,15 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration: 1800,
+    once: true,
+    offset: 120,
+    easing: 'ease-out-cubic'
+});
         AOS.init({ duration: 900, offset: 100, once: true });
     </script>
     <script src="js/main.js"></script>
