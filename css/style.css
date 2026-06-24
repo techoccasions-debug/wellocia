@@ -244,8 +244,10 @@ h5, h6,
     color: var(--accent);
     margin-bottom: 10px;
 }
+/* =========================
+   SERVICE CARDS (FINAL PREMIUM VERSION)
+========================= */
 
-/* ── Service Cards ── */
 .service-item {
     position: relative;
     overflow: hidden;
@@ -254,54 +256,110 @@ h5, h6,
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     background-color: var(--light);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 18px;
+
+    transition: all 0.4s ease;
+    transform: translateZ(0);
+}
+
+/* smooth lift hover */
+.service-item:hover {
+    transform: translateY(-14px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(30, 94, 56, 0.18);
+    border-color: rgba(30, 94, 56, 0.25);
+}
+
+/* soft glow (top-left premium light) */
+.service-item::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 180px;
+    height: 180px;
+
+    background: radial-gradient(
+        circle,
+        rgba(30, 94, 56, 0.18),
+        transparent 70%
+    );
+
+    opacity: 0;
     transition: all 0.4s ease;
 }
 
+/* bottom premium wave */
 .service-item::after {
-    position: absolute;
     content: "";
-    width: 100%;
-    height: 50px;
-    bottom: -50px;
+    position: absolute;
+    bottom: -60px;
     left: 0;
-    background: var(--secondary);
-    border-radius: 100% 100% 0 0;
-    transition: 0.5s;
+    width: 100%;
+    height: 80px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(30, 94, 56, 0.08),
+        rgba(201, 134, 90, 0.06)
+    );
+
+    transform: translateY(40px);
+    transition: all 0.4s ease;
 }
 
-.service-item:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 48px rgba(30, 94, 56, 0.14);
-    border-color: var(--primary);
+/* activate effects on hover */
+.service-item:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .service-item:hover::after {
-    bottom: -25px;
+    transform: translateY(0);
+}
+
+/* icon styling (your centered design preserved) */
+.service-item .bg-primary {
+    box-shadow: 0 12px 28px rgba(30, 94, 56, 0.25);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover .bg-primary {
+    transform: scale(1.1) rotate(-6deg);
+}
+
+/* text styling */
+.service-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
 }
 
 .service-item p {
-    transition: 0.3s;
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    transition: 0.3s ease;
 }
 
+/* paragraph micro interaction */
 .service-item:hover p {
-    margin-bottom: 25px !important;
+    transform: translateY(-2px);
 }
 
-.service-item .service-icon {
-    color: var(--primary);
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-    transition: color 0.3s ease;
+/* keep content above effects */
+.service-item * {
+    position: relative;
+    z-index: 2;
 }
 
-.service-item:hover .service-icon {
-    color: var(--accent);
-}
+/* =========================
+   INDUSTRY CARDS (UNCHANGED BUT CLEANED)
+========================= */
 
-/* ── Industry Cards ── */
 #industries .card {
     border: 1px solid var(--border);
     border-radius: 14px;
