@@ -198,3 +198,78 @@ window.addEventListener("scroll", () => {
     }
 
 });
+AOS.init({
+    duration: 1800,
+    once: true,
+    offset: 120,
+    easing: 'ease-out-cubic'
+});
+        AOS.init({ duration: 900, offset: 100, once: true });
+ //<!--Form Scripts -->
+        document
+  .getElementById("contactForm")
+  .addEventListener("submit", async function (e) {
+
+    e.preventDefault();
+
+    const submitBtn = this.querySelector("button");
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Submitting...";
+
+    const formData = {
+      name: this.name.value,
+      phone: this.phone.value,
+      email: this.email.value,
+      requirement: this.requirement.value
+    };
+
+    try {
+
+
+      await fetch(
+  "https://script.google.com/macros/s/AKfycbztOlTFjIIrUCGddrBCaDkK3DSwLSoQ6J867wIlNZx53S1IXATAiVTp5btI9XKv0sxWtA/exec",
+  {
+    method: "POST",
+    body: JSON.stringify(formData)
+  }
+);
+
+// Hide form
+document.getElementById("formContainer").style.display = "none";
+
+// Show thank you box
+document.getElementById("thankYouBox").style.display = "block";
+
+// Thank you content
+document.getElementById("thankYouBox").innerHTML = `
+<div class="thank-you-card">
+
+    <div class="success-icon">✓</div>
+
+    <h3>Application Submitted Successfully!</h3>
+
+    <p>
+        Thank you for your interest in Wellocia.
+        Our recruitment team will review your profile and contact you shortly.
+    </p>
+
+    <a href="PASTE_YOUR_WHATSAPP_CHANNEL_LINK_HERE"
+       target="_blank"
+       class="join-channel-btn">
+       <i class="fab fa-whatsapp"></i>
+<span>Join WhatsApp Channel For Job Updates</span>
+    </a>
+
+</div>
+`;
+
+    } catch (error) {
+
+      document.getElementById("formMessage").innerHTML =
+        "<p style='color:red;'>Something went wrong. Please try again.</p>";
+
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Submit";
+});
