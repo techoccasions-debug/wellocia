@@ -1183,6 +1183,45 @@ footer hr {
     transform: translateX(6px);
     border-color: #25D366;
 }
+/* =========================
+   MOBILE INDUSTRY TICKER FIX
+========================= */
+
+@media (max-width: 768px) {
+
+    .industry-ticker {
+        padding: 10px 0 !important;   /* was 20px */
+    }
+
+    .ticker-track span {
+        font-size: 12px !important;
+        margin-right: 22px !important; /* reduce spacing */
+    }
+
+    .ticker-track span::after {
+        width: 4px;
+        height: 4px;
+        right: -14px;
+    }
+
+    /* reduce fade overlay width */
+    .industry-ticker::before,
+    .industry-ticker::after {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .industry-ticker {
+        padding: 8px 0 !important;
+    }
+
+    .ticker-track span {
+        font-size: 11px !important;
+        margin-right: 16px !important;
+    }
+}
 .section-subtitle{
     max-width:700px;
     margin:15px auto 0;
