@@ -100,141 +100,104 @@
      CONTACT SECTION
 ========================================== -->
 <section class="contact-modern">
-    <div class="container">
+  <div class="container">
 
-        <div class="row align-items-center g-5">
+    <div class="row g-5 align-items-start">
 
-            <!-- LEFT CONTENT -->
-            <div class="col-lg-5 reveal-left">
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-5 reveal-left">
 
-                <span class="section-eyebrow">
-                    Contact Us
-                </span>
+        <span class="section-eyebrow">Contact Us</span>
 
-                <h2 class="contact-title">
-                    Let's Build Your
-                    <span>Dream Team</span>
-                </h2>
+        <h2 class="contact-title">
+          Let's Build Your <span>Dream Team</span>
+        </h2>
 
-                <p class="contact-desc">
-                    Whether you're hiring top talent, scaling your workforce,
-                    or looking for HR support, our team is ready to help you
-                    find the right people and the right solutions.
-                </p>
+        <p class="contact-desc">
+          Whether you're hiring top talent, scaling your workforce,
+          or looking for HR support, our team is ready to help.
+        </p>
 
-                <div class="contact-cards">
+        <div class="contact-cards">
 
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-
-                        <div>
-                            <h6>Visit Our Office</h6>
-                            <p>
-                                131/15 Soma Tower,
-                                Zone-II MP Nagar,
-                                Bhopal, Madhya Pradesh
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-
-                        <div>
-                            <h6>Email Us</h6>
-                            <p>info@wellocia.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-
-                        <div>
-                            <h6>Call Us</h6>
-                            <p>+91 98712 14748</p>
-                        </div>
-                    </div>
-
-                </div>
-
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
             </div>
-
-            <!-- RIGHT FORM -->
-            <div class="col-lg-7 reveal-right" >
-
-                <div class="contact-form-card">
-
-                    <div class="form-header">
-                        <h3>Request a Consultation</h3>
-                        <p>
-                            Tell us about your hiring requirements and our team
-                            will get back to you shortly.
-                        </p>
-                    </div>
-
-                    <form>
-
-                        <div class="row g-4">
-
-                            <div class="col-md-6">
-                                <input
-                                    type="text"
-                                    class="form-control modern-input"
-                                    placeholder="Your Name">
-                            </div>
-
-                            <div class="col-md-6">
-                                <input
-                                    type="email"
-                                    class="form-control modern-input"
-                                    placeholder="Email Address">
-                            </div>
-
-                            <div class="col-md-6">
-                                <input
-                                    type="text"
-                                    class="form-control modern-input"
-                                    placeholder="Phone Number">
-                            </div>
-
-                            <div class="col-md-6">
-                                <input
-                                    type="text"
-                                    class="form-control modern-input"
-                                    placeholder="Company Name">
-                            </div>
-
-                            <div class="col-12">
-                                <textarea
-                                    class="form-control modern-input"
-                                    rows="6"
-                                    placeholder="Tell us about your requirement"></textarea>
-                            </div>
-
-                            <div class="col-12">
-                                <button class="btn contact-btn">
-                                    <i class="fas fa-paper-plane me-2"></i>
-                                    Send Inquiry
-                                </button>
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
+            <div>
+              <h6>Visit Our Office</h6>
+              <p>MP Nagar, Bhopal</p>
             </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h6>Email Us</h6>
+              <p>info@wellocia.com</p>
+            </div>
+          </div>
 
         </div>
 
+      </div>
+
+      <!-- RIGHT FORM (FIXED COLUMN) -->
+      <!-- RIGHT FORM -->
+<div class="col-lg-7 reveal-right">
+
+  <div class="contact-form-card">
+
+    <!-- FORM WRAPPER -->
+    <div id="formContainer">
+
+      <form id="contactForm">
+
+        <div class="form-header">
+          <h3>Request a Consultation</h3>
+          <p>Tell us your requirement and we’ll respond quickly.</p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <input type="text" name="name" class="form-control modern-input" placeholder="Your Name" required>
+          </div>
+
+          <div class="col-md-6">
+            <input type="email" name="email" class="form-control modern-input" placeholder="Email">
+          </div>
+
+          <div class="col-md-6">
+            <input type="tel" name="phone" class="form-control modern-input" placeholder="Phone" required>
+          </div>
+
+          <div class="col-12">
+            <textarea name="requirement" rows="6" class="form-control modern-input"
+              placeholder="Requirement"></textarea>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn contact-btn w-100">
+              <i class="fas fa-paper-plane me-2"></i>
+              Send Inquiry
+            </button>
+          </div>
+
+        </div>
+
+      </form>
+
     </div>
+
+    <!-- THANK YOU BOX (INSIDE CARD) -->
+    <div id="thankYouBox" style="display:none;"></div>
+
+  </div>
+
+</div>
 </section>
 
                 
