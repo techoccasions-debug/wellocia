@@ -3152,3 +3152,650 @@ textarea.modern-input{
         font-size:2.3rem;
     }
 }
+/* ==================================================
+   SERVICES PAGE - WELLOCIA
+================================================== */
+
+:root{
+    --primary:#3B7A57;
+    --primary-dark:#1F4D36;
+    --primary-light:#EAF5EF;
+    --accent:#D4A64A;
+    --text:#253329;
+    --text-light:#6B756F;
+    --white:#ffffff;
+    --border:#E3ECE5;
+    --section:#F8FAF8;
+}
+
+/* ==================================================
+   GLOBAL
+================================================== */
+
+.hero,
+.services-section,
+.featured-section,
+.training-section,
+.guarantee-section,
+.faq-section,
+.cta-section{
+    position:relative;
+    overflow:hidden;
+}
+
+.section-eyebrow{
+    display:inline-block;
+    color:var(--primary);
+    font-weight:700;
+    font-size:.9rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-size:clamp(2rem,4vw,3rem);
+    font-weight:700;
+    color:var(--primary-dark);
+    margin-bottom:20px;
+}
+
+.section-sub{
+    color:var(--text-light);
+    font-size:1.05rem;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+    max-width:1300px;
+    margin:auto;
+    padding:100px 20px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:clamp(2.5rem,5vw,4.5rem);
+    line-height:1.1;
+    font-weight:800;
+    color:var(--primary-dark);
+    margin-bottom:25px;
+}
+
+.hero h1 em{
+    color:var(--primary);
+    font-style:normal;
+}
+
+.hero-desc{
+    font-size:1.1rem;
+    line-height:1.9;
+    color:var(--text-light);
+    margin-bottom:35px;
+}
+
+.hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--primary-light);
+    color:var(--primary);
+    padding:10px 18px;
+    border-radius:40px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:50px;
+}
+
+.btn-gold{
+    background:var(--accent);
+    color:#fff;
+    padding:15px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-gold:hover{
+    transform:translateY(-4px);
+    color:#fff;
+}
+
+.btn-ghost{
+    border:2px solid var(--primary);
+    color:var(--primary);
+    padding:15px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-ghost:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+.hero-stats{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.stat-item{
+    display:flex;
+    flex-direction:column;
+}
+
+.stat-number{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--primary-dark);
+}
+
+.stat-label{
+    color:var(--text-light);
+    font-size:.95rem;
+}
+
+.hero-visual{
+    display:grid;
+    gap:25px;
+}
+
+.hero-card{
+    background:#fff;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
+    border:1px solid var(--border);
+    transition:.3s;
+}
+
+.hero-card:hover{
+    transform:translateY(-8px);
+}
+
+.hero-card-icon{
+    width:70px;
+    height:70px;
+    border-radius:20px;
+    background:var(--primary-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary);
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.hero-card h4{
+    color:var(--primary-dark);
+    margin-bottom:12px;
+}
+
+/* ==================================================
+   SERVICES
+================================================== */
+
+.services-section{
+    background:var(--section);
+    padding:110px 20px;
+}
+
+.services-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.services-grid{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.service-card{
+    background:#fff;
+    padding:35px;
+    border-radius:24px;
+    border:1px solid var(--border);
+    transition:.35s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+
+.service-icon{
+    width:75px;
+    height:75px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.icon-navy,
+.icon-gold{
+    background:var(--primary-light);
+    color:var(--primary);
+}
+
+.service-card h3{
+    color:var(--primary-dark);
+    margin-bottom:15px;
+}
+
+.service-card p{
+    color:var(--text-light);
+    line-height:1.8;
+}
+
+.service-tags{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.tag{
+    background:var(--primary-light);
+    color:var(--primary);
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+/* ==================================================
+   FEATURED PROCESS
+================================================== */
+
+.featured-section{
+    padding:120px 20px;
+}
+
+.featured-inner{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.featured-visual{
+    background:#fff;
+    padding:40px;
+    border-radius:30px;
+    border:1px solid var(--border);
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+
+.process-step{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.step-dot{
+    min-width:55px;
+    height:55px;
+    border-radius:50%;
+    background:var(--primary);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+}
+
+.step-info h5{
+    color:var(--primary-dark);
+}
+
+.step-info p{
+    color:var(--text-light);
+}
+
+.featured-list{
+    list-style:none;
+    padding:0;
+}
+
+.featured-list li{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+    color:var(--text-light);
+}
+
+.featured-list i{
+    color:var(--primary);
+    margin-top:5px;
+}
+
+/* ==================================================
+   TRAINING
+================================================== */
+
+.training-section{
+    background:var(--section);
+    padding:120px 20px;
+}
+
+.training-grid{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.training-card{
+    display:flex;
+    gap:20px;
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    margin-bottom:20px;
+}
+
+.tc-icon{
+    width:60px;
+    height:60px;
+    border-radius:16px;
+    background:var(--primary-light);
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+}
+
+.roadmap-visual{
+    background:#fff;
+    padding:40px;
+    border-radius:30px;
+    border:1px solid var(--border);
+}
+
+.roadmap-title{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--primary-dark);
+    margin-bottom:30px;
+}
+
+/* ==================================================
+   GUARANTEE
+================================================== */
+
+.guarantee-section{
+    padding:120px 20px;
+}
+
+.guarantee-inner{
+    max-width:1300px;
+    margin:auto;
+    background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+    color:#fff;
+    padding:70px;
+    border-radius:35px;
+}
+
+.guarantee-inner h2{
+    color:#fff;
+    margin:20px 0;
+}
+
+.guarantee-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:10px 20px;
+    border-radius:40px;
+}
+
+.benefits-grid{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.benefit-item{
+    background:rgba(255,255,255,.08);
+    padding:18px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.benefit-check{
+    color:#fff;
+}
+
+/* ==================================================
+   FAQ
+================================================== */
+
+.faq-section{
+    background:var(--section);
+    padding:120px 20px;
+}
+
+.faq-container{
+    max-width:900px;
+    margin:60px auto 0;
+}
+
+.faq-item{
+    background:#fff;
+    border-radius:20px;
+    margin-bottom:20px;
+    overflow:hidden;
+    border:1px solid var(--border);
+}
+
+.faq-question{
+    width:100%;
+    border:none;
+    background:none;
+    text-align:left;
+    padding:25px 30px;
+    font-weight:600;
+    color:var(--primary-dark);
+    display:flex;
+    justify-content:space-between;
+}
+
+.faq-answer{
+    padding:0 30px 25px;
+    color:var(--text-light);
+    line-height:1.8;
+}
+
+/* ==================================================
+   CTA
+================================================== */
+
+.cta-section{
+    padding:120px 20px;
+}
+
+.cta-inner{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn-outline{
+    border:2px solid var(--primary);
+    color:var(--primary);
+    padding:15px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.btn-outline:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:992px){
+
+    .hero,
+    .featured-inner,
+    .training-grid{
+        grid-template-columns:1fr;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .benefits-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .guarantee-inner{
+        padding:50px 35px;
+    }
+}
+
+@media(max-width:768px){
+
+    .hero{
+        padding:70px 20px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .benefits-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-stats{
+        gap:25px;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .hero h1{
+        font-size:2.7rem;
+    }
+
+    .featured-section,
+    .training-section,
+    .services-section,
+    .faq-section,
+    .cta-section,
+    .guarantee-section{
+        padding:80px 20px;
+    }
+}
+
+/* ==========================================
+   JOB GUARANTEE POSTER
+========================================== */
+
+.roadmap-poster{
+    position: relative;
+}
+
+.poster-img{
+    width: 100%;
+    display: block;
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 60px rgba(0,0,0,.12);
+    transition: .4s ease;
+    background: #fff;
+}
+
+.poster-img:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 35px 80px rgba(0,0,0,.16);
+}
+
+.roadmap-poster::before{
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(59,122,87,.08);
+    border-radius: 50%;
+    top: -40px;
+    right: -40px;
+    z-index: -1;
+}
+
+.roadmap-poster::after{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(212,166,74,.12);
+    border-radius: 50%;
+    bottom: -25px;
+    left: -25px;
+    z-index: -1;
+}
+.hero-card{
+    animation: floatCard 5s ease-in-out infinite;
+}
+
+.hero-card:nth-child(2){
+    animation-delay: 1s;
+}
+
+.hero-card:nth-child(3){
+    animation-delay: 2s;
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
