@@ -1474,9 +1474,9 @@ footer hr {
 
 /* Nav links compact */
 .navbar-light .navbar-nav .nav-link {
-    padding: 10px 12px !important;
-    font-size: 14px;
-    letter-spacing: 0.8px;
+    padding: 10px 10px !important;
+    font-size: 13px;
+    letter-spacing: 0.4px;
 }
 
 /* Remove extra vertical stretch in sticky mode */
@@ -3903,17 +3903,160 @@ textarea.modern-input{
     margin:15px 0;
 }
 
-@media(max-width:991px){
+@media (max-width: 991px){
 
     .calculator-card{
         grid-template-columns:1fr;
+        padding:25px;
+        gap:20px;
     }
 
     .cost-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .cost-box{
+        padding:15px;
+    }
+
+    .cost-box span{
+        font-size:22px;
     }
 
     .savings-box h3{
         font-size:36px;
     }
+}
+
+@media (max-width: 768px){
+
+    .calculator-title{
+        font-size:30px;
+    }
+
+    .calculator-subtitle{
+        font-size:14px;
+    }
+
+    .calculator-card{
+        padding:18px;
+        gap:18px;
+    }
+
+    .slider-group{
+        margin-bottom:25px;
+    }
+
+    .slider-group label{
+        font-size:15px;
+    }
+
+    .slider-value{
+        font-size:22px;
+        margin-bottom:10px;
+    }
+
+   .cost-grid{
+    grid-template-columns:1fr 1fr;
+}
+.featured{
+    grid-column:1/-1;
+}
+
+    .cost-box{
+        padding:14px;
+        border-radius:12px;
+    }
+
+    .cost-box h6{
+        font-size:13px;
+        margin-bottom:6px;
+    }
+
+    .cost-box span{
+        font-size:20px;
+    }
+
+    .savings-box{
+        padding:20px;
+    }
+
+    .savings-box small{
+        font-size:13px;
+    }
+
+    .savings-box h3{
+        font-size:28px;
+        margin:10px 0;
+    }
+
+    .savings-box .btn{
+        width:100%;
+        padding:12px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .calculator-card{
+        padding:15px;
+    }
+
+    .calculator-title{
+        font-size:26px;
+    }
+
+    .slider-value{
+        font-size:20px;
+    }
+
+    .cost-box{
+        padding:12px;
+    }
+
+    .cost-box span{
+        font-size:18px;
+    }
+
+    .savings-box h3{
+        font-size:24px;
+    }
+}
+/* ==========================================
+   phone optimization
+========================================== */
+
+@media (max-width:768px){
+
+    .carousel-caption{
+        padding-top: 90px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-bottom: 30px !important;
+    }
+
+}
+@media (max-width:768px){
+
+    .hero-banner img{
+        height: 460px !important;
+        object-fit: cover;
+    }
+
+}
+@media (max-width:768px){
+
+    .carousel-caption h1{
+        font-size: 1.8rem !important;
+        line-height: 1.15;
+        margin-bottom: 15px;
+    }
+
+}
+@media (max-width:480px){
+
+    .carousel-caption h1{
+        font-size: 1.55rem !important;
+    }
+
 }
