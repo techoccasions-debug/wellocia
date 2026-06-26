@@ -1,0 +1,812 @@
+:root {
+    --primary: #1E5E38;
+    --primary-hover: #2E7D4F;
+    --accent: #C9865A;
+    --accent-hover: #B5724A;
+    --secondary: #F4EDE3;
+    --light: #FAFAF7;
+    --dark: #162B1E;
+    --muted: #5A7A65;
+    --border: #D6E4DA;
+    --soft: #f7f4ef;
+    --text: #1c1c1c;
+    --shadow-sm: 0 4px 12px rgba(22, 43, 30, 0.03);
+    --shadow-md: 0 12px 30px rgba(22, 43, 30, 0.06);
+    --shadow-lg: 0 20px 50px rgba(22, 43, 30, 0.12);
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================
+   1. GLOBAL REBOOT & LAYOUT ARCHITECTURE
+   ========================================== */
+body {
+    background-color: var(--light);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.text-center { text-align: center; }
+.py-5 { padding-top: 7rem; padding-bottom: 7rem; }
+.mt-4 { margin-top: 3.5rem; }
+
+/* Elegant, authoritative typography anchors */
+h1, h2, h3, h4 {
+    color: var(--dark);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* ==========================================
+   2. HERO HEADER (Split Layout with Image Asset)
+   ========================================== */
+.program-section {
+    width: 100%;
+    padding: 0 !important;
+    background-color: var(--dark);
+}
+
+.program-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+/* Creates the edge-to-edge split responsive viewport container */
+.program-banner {
+    position: relative;
+    width: 100%;
+    min-height: 90vh; 
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Controls content to image asset width balance */
+    align-items: center;
+    background-color: var(--dark);
+    border-bottom: 6px solid var(--accent);
+}
+
+/* Left Content Area */
+.banner-content {
+    padding: 6rem 4rem 6rem 10%; /* Beautiful padding balance pushing inward */
+    z-index: 5;
+    position: relative;
+}
+
+.banner-content h1 {
+    font-size: 4.25rem;
+    line-height: 1.05;
+    color: var(--light);
+    margin-bottom: 2rem;
+}
+
+.program-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 3.5rem;
+}
+
+.program-tags span {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--secondary);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Premium Button Architecture */
+.brochure-btn, .enroll-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    color: var(--light);
+    padding: 1.25rem 3rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 6px 20px rgba(201, 134, 90, 0.25);
+}
+
+.brochure-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(201, 134, 90, 0.4);
+}
+
+/* Right Side Image Container Layer (Fulfills requested banner visual image update) */
+.banner-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    /* Dynamically loaded stock placeholder mimicking your source team graphic style */
+    background:url("img/head-bg.jpg") center center / cover no-repeat;
+}
+
+/* Subtle dark gradient mapping on overlay to unify the image into your --dark brand theme */
+.banner-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--dark) 0%, rgba(22, 43, 30, 0.15) 30%);
+    z-index: 2;
+}
+
+/* ==========================================
+   3. STRUCTURAL PROGRAM DETAILS METRICS
+   ========================================== */
+.program-info {
+    max-width: 1200px;
+    margin: -5rem auto 6rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 10;
+}
+
+.program-info h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+}
+
+.program-info p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(30, 94, 56, 0.06);
+    padding: 0.85rem 2.25rem;
+    border-radius: 12px;
+    margin: 0;
+}
+
+/* ==========================================
+   4. ROADMAP GRID ARCHITECTURE (3x3 Matrix)
+   ========================================== */
+.roadmap-grid {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.month-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+.month-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--muted);
+}
+
+.month-head {
+    align-self: flex-start;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 0.45rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.month-card h4 {
+    font-size: 1.6rem;
+    margin-bottom: 1.75rem;
+}
+
+.month-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.month-card ul li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 1.25rem;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.month-card ul li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+}
+
+/* Emphasizes Month 9 Framework Milestone */
+.month-card:nth-child(9) {
+    border: 2px solid var(--accent);
+    background: var(--soft);
+}
+.month-card:nth-child(9) .month-head {
+    background-color: var(--accent);
+}
+
+/* ==========================================
+   5. COMPLIANCE DOCUMENTS & PPO PANELS
+   ========================================== */
+.documents-section {
+    background-color: var(--secondary);
+    padding: 7rem 0;
+}
+
+.section-header h2 {
+    font-size: 2.75rem;
+    margin-bottom: 4rem;
+}
+
+.docs-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.doc-item {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+.doc-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.doc-item span {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.doc-item i {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+/* PPO Segment Panels */
+.ppo-section {
+    background-color: var(--light);
+}
+
+.ppo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.ppo-card {
+    background: var(--dark);
+    color: var(--secondary);
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    border-bottom: 6px solid var(--primary);
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+}
+
+.ppo-card:hover {
+    transform: translateY(-8px);
+    background: #1f3d2a;
+    color: var(--light);
+    border-bottom-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================
+   6. PREMIUM INVESTMENT MATRIX
+   ========================================== */
+.pricing-section {
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+}
+
+.pricing-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-box {
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 5rem 3.5rem;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.price-box h5 {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.price-box h2 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.price-box.recommended {
+    background: var(--dark);
+    color: var(--light);
+    border: 2px solid var(--accent);
+    position: relative;
+}
+
+.price-box.recommended h2 { color: var(--light); }
+.price-box.recommended h5 { color: var(--accent); }
+
+.enroll-btn {
+    background-color: var(--primary);
+    margin-top: 4rem;
+}
+
+.enroll-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(30, 94, 56, 0.3);
+}
+
+/* ==========================================
+   7. SCROLL ANIMATION CONFIGURATION HOOKS
+   ========================================== */
+.reveal-up, .reveal-left, .reveal-right {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
+}
+
+.reveal-up { transform: translateY(60px); }
+.reveal-left { transform: translateX(-60px); }
+.reveal-right { transform: translateX(60px); }
+
+/* Class injected into elements by your scroll trigger library (e.g., GSAP ScrollTrigger or IntersectionObserver) */
+.active.reveal-up, .active.reveal-left, .active.reveal-right {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* ==========================================
+   8. MEDIA QUERIES (FLUID RESPONSIVENESS)
+   ========================================== */
+@media (max-width: 1200px) {
+    .banner-content h1 { font-size: 3.5rem; }
+    .roadmap-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .docs-list, .ppo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .program-banner { grid-template-columns: 1fr; min-height: auto; }
+    .banner-overlay { min-height: 400px; grid-row: 1; } /* Image snaps elegantly to the top on mobile/tablet */
+    .banner-content { padding: 5rem 2.5rem; }
+    .program-info { flex-direction: column; text-align: center; gap: 2rem; margin-top: -3rem; padding: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+    .banner-content h1 { font-size: 2.75rem; }
+    .roadmap-grid, .docs-list, .ppo-grid, .pricing-card { grid-template-columns: 1fr; }
+    .price-box { padding: 3.5rem 2rem; }
+}
+/* ==========================================
+   UPDATED HERO BANNER ARCHITECTURE
+   ========================================== */
+.program-section {
+    width: 100%;
+    padding: 0 !important;
+    background-color: var(--light);
+}
+
+.program-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+/* Implements the exact layout from WhatsApp Image 2026-06-27 at 1.00.11 AM.jpeg */
+.program-banner {
+    position: relative;
+    width: 100%;
+    min-height: 480px; /* Reduced vertical scale for a sleeker profile */
+    display: flex;
+    align-items: center;
+    
+    /* Full-bleed background image setup */
+    background: url("head-bg.jpg") center 40% / cover no-repeat;
+    border-bottom: 5px solid var(--accent);
+    overflow: hidden;
+}
+
+/* Elegant horizontal color fade layer: Solid dark green on left, transparent over team image on right */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        var(--dark) 0%, 
+        var(--dark) 40%, 
+        rgba(22, 43, 30, 0.85) 55%, 
+        rgba(22, 43, 30, 0.2) 100%
+    );
+    z-index: 1;
+}
+
+/* Safely centers typography blocks across web viewports */
+.banner-content {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 3.5rem 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2; /* Forces text to layer cleanly on top of the gradient */
+    position: relative;
+}
+
+.banner-content h1 {
+    font-size: 3.25rem; /* Balanced, punchy headline scaling */
+    line-height: 1.15;
+    color: var(--light);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    max-width: 680px; /* Restricts layout text wrapping to mimic reference photo exactly */
+    letter-spacing: -0.5px;
+}
+
+/* Compact pill tags layout directly beneath the heading */
+.program-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+}
+
+.program-tags span {
+    background-color: var(--accent); /* Matches the bright button pop fills */
+    color: var(--light);
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Clean, crisp call to action buttons */
+.brochure-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--light);
+    padding: 0.85rem 2rem; /* Tightened touch target spacing */
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(201, 134, 90, 0.3);
+}
+
+.brochure-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(201, 134, 90, 0.4);
+}
+
+/* Adjusted info overlay box placement for smaller header height scale */
+.program-info {
+    max-width: 1200px;
+    margin: 3rem auto; /* Swapped out negative margins for a clean, professional stack separation */
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(22, 43, 30, 0.04);
+}
+
+/* Tablet & Mobile responsive optimization boundaries */
+@media (max-width: 768px) {
+    .program-banner {
+        min-height: 400px;
+    }
+    .banner-overlay {
+        background: linear-gradient(180deg, rgba(22, 43, 30, 0.9) 0%, var(--dark) 100%);
+    }
+    .banner-content h1 {
+        font-size: 2.25rem;
+    }
+    .program-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+        padding: 2rem;
+    }
+}
+/* ==========================================
+   1. PPO OPPORTUNITIES SECTION (Premium Grid)
+   ========================================== */
+.ppo-section {
+    background-color: var(--light);
+    padding: 7rem 0;
+    position: relative;
+}
+
+.ppo-section .section-header h2 {
+    font-size: 2.75rem;
+    color: var(--dark);
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle accent underline indicator */
+.ppo-section .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* 4-Column Grid layout */
+.ppo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* Sleek glassmorphism / minimal border card */
+.ppo-card {
+    background: #FFFFFF;
+    color: var(--dark);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    text-align: left; /* Shift away from boring centered alignment */
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+/* Modern clean indicator slot inside the card */
+.ppo-card::before {
+    content: '→';
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+/* Premium hover micro-interaction */
+.ppo-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.ppo-card:hover::before {
+    transform: translateX(6px);
+    color: var(--primary);
+}
+
+
+/* ==========================================
+   2. PRICING SECTION (High-Conversion Matrix)
+   ========================================== */
+.pricing-section {
+    background: var(--secondary); /* Contrast backdrop to block out the pricing area */
+    padding: 8rem 0;
+}
+
+.pricing-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 950px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Clean Base Price Box Layout */
+.price-box {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 4.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+}
+
+.price-box h5 {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin: 0 0 1.5rem 0;
+    font-weight: 700;
+}
+
+.price-box h2 {
+    font-size: 3.75rem;
+    font-weight: 900;
+    color: var(--dark);
+    margin: 0;
+    line-height: 1;
+}
+
+.price-box small {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Recommended Strategic Card Upgrade */
+.price-box.recommended {
+    background: var(--dark);
+    border: 2.5px solid var(--accent);
+    color: var(--light);
+    transform: scale(1.05); /* Gives natural visual hierarchy */
+    box-shadow: var(--shadow-lg);
+}
+
+.price-box.recommended h2 {
+    color: #FFFFFF;
+}
+
+.price-box.recommended h5 {
+    color: var(--accent);
+}
+
+.price-box.recommended small {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Floating Ribbon "Badge" for Launch Offer */
+.price-box.recommended::after {
+    content: 'Most Popular';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent);
+    color: var(--light);
+    padding: 0.4rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(201, 134, 90, 0.3);
+}
+
+/* Button CTA Section Alignment */
+.enroll-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 1.25rem 4rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 6px 20px rgba(30, 94, 56, 0.2);
+}
+
+.enroll-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(30, 94, 56, 0.35);
+}
+
+
+/* ==========================================
+   3. FLUID RESPONSIVE BREAKPOINTS
+   ========================================== */
+@media (max-width: 1024px) {
+    .ppo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ppo-grid, .pricing-card {
+        grid-template-columns: 1fr;
+    }
+    .price-box.recommended {
+        transform: scale(1); /* Reset scale overlay to prevent clipping on mobile viewports */
+        margin-top: 1rem;
+    }
+    .price-box {
+        padding: 3.5rem 2rem;
+    }
+}
