@@ -1221,139 +1221,45 @@ footer hr {
 =================================== */
 
 .industry-ticker {
-    position: relative;
-    overflow: hidden;
     background: var(--accent);
-    padding: 20px 0;
-    border-top: 1px solid #edf2f7;
-    border-bottom: 1px solid #edf2f7;
+    padding: 10px 15px;
+    border-top: 1px solid rgba(22, 43, 30, 0.08);
+    border-bottom: 1px solid rgba(22, 43, 30, 0.08);
 }
 
-.ticker-track {
+.comparison-ticker {
     display: flex;
-    width: max-content;
-    animation: tickerScroll 30s linear infinite;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.ticker-track span {
-    position: relative;
-    white-space: nowrap;
-    margin-right: 45px;
-
-    font-size: 15px;
+.old-price {
+    color: rgba(22,43,30,.70);
+    font-size: 14px;
     font-weight: 600;
-    color: #1f2937;
-    letter-spacing: 0.3px;
+    text-decoration: line-through;
 }
 
-/* Green separator */
-.ticker-track span::after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background: var(--primary);
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    right: -25px;
-    transform: translateY(-50%);
+.vs-badge {
+    background: var(--dark);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-.industry-ticker:hover .ticker-track {
-    animation-play-state: paused;
-}
-
-/* Smooth fade edges */
-.industry-ticker::before,
-.industry-ticker::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    z-index: 2;
-}
-
-.industry-ticker::before {
-    left: 0;
-    background: linear-gradient(to right, #fff, transparent);
-}
-
-.industry-ticker::after {
-    right: 0;
-    background: linear-gradient(to left, #fff, transparent);
-}
-
-@keyframes tickerScroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-.about-points {
-    margin-top: 20px;
-}
-
-.point {
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
-    padding: 12px 16px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    color: #334155;
-    transition: all .3s ease;
-}
-
-.point:hover {
-    transform: translateX(6px);
-    border-color: #25D366;
-}
-
-/* =========================
-   MOBILE INDUSTRY TICKER FIX
-========================= */
-
-@media (max-width: 768px) {
-
-    .industry-ticker {
-        padding: 10px 0 !important;
-        /* was 20px */
-    }
-
-    .ticker-track span {
-        font-size: 12px !important;
-        margin-right: 22px !important;
-        /* reduce spacing */
-    }
-
-    .ticker-track span::after {
-        width: 4px;
-        height: 4px;
-        right: -14px;
-    }
-
-    /* reduce fade overlay width */
-    .industry-ticker::before,
-    .industry-ticker::after {
-        width: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .industry-ticker {
-        padding: 8px 0 !important;
-    }
-
-    .ticker-track span {
-        font-size: 11px !important;
-        margin-right: 16px !important;
-    }
+.new-price {
+    background: #fff;
+    color: var(--dark);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(22,43,30,.12);
 }
 
 .section-subtitle {
@@ -1378,6 +1284,26 @@ footer hr {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.about-points {
+    margin-top: 20px;
+}
+
+.point {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #334155;
+    transition: all .3s ease;
+}
+
+.point:hover {
+    transform: translateX(6px);
+    border-color: #25D366;
+}
+
 
 /* =========================
    RESPONSIVE FIX SYSTEM
@@ -3875,4 +3801,119 @@ textarea.modern-input{
 
 .btn-navy{
     margin-top: 20px;
+}
+.savings-calculator-section{
+    background: var(--soft);
+}
+
+.calculator-title{
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.calculator-subtitle{
+    color: var(--muted);
+}
+
+.calculator-card{
+    background:#fff;
+    border-radius:24px;
+    padding:35px;
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:30px;
+    box-shadow:0 10px 40px rgba(0,0,0,.06);
+}
+
+.slider-group{
+    margin-bottom:40px;
+}
+
+.slider-group label{
+    display:block;
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.slider-value{
+    color:var(--primary);
+    font-size:28px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.slider-group input[type="range"]{
+    width:100%;
+    accent-color:var(--accent);
+}
+
+.cost-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.cost-box{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    text-align:center;
+}
+
+.cost-box h6{
+    font-size:15px;
+    margin-bottom:10px;
+}
+
+.cost-box span{
+    font-size:28px;
+    font-weight:800;
+    color:var(--dark);
+}
+
+.featured{
+    background:linear-gradient(135deg,var(--primary),var(--dark));
+}
+
+.featured h6,
+.featured span{
+    color:#fff;
+}
+
+.savings-box{
+    background:linear-gradient(135deg,var(--primary),var(--dark));
+    border-radius:18px;
+    text-align:center;
+    padding:35px;
+}
+
+.savings-box small{
+    color:#fff;
+    font-size:16px;
+}
+
+.savings-box h3{
+    color:#fff;
+    font-size:48px;
+    font-weight:900;
+    margin:15px 0;
+}
+
+@media(max-width:991px){
+
+    .calculator-card{
+        grid-template-columns:1fr;
+    }
+
+    .cost-grid{
+        grid-template-columns:1fr;
+    }
+
+    .savings-box h3{
+        font-size:36px;
+    }
 }
