@@ -99,34 +99,40 @@
     </nav>
     
     <!-- Hero Section -->
+<!-- Hero Section -->
 <div class="container-fluid p-0">
     <div class="hero-banner position-relative">
-        <img class="w-100" src="img/carousel-1.png" alt="Hero Banner">
+        <img class="w-100 hero-img" src="img/carousel-1.png" alt="Hero Banner">
 
         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-            <div class="p-3" style="max-width: 900px;" data-aos="zoom-in" data-aos-duration="1200">
+            <!-- Reduced mobile padding from p-3 to p-2 p-md-3 -->
+            <div class="p-2 p-md-3" style="max-width: 900px;" data-aos="zoom-in" data-aos-duration="1200">
                 
-
-                <h1 class="display-1 text-white mb-md-4">
-                   Hiring 2+ Employees This Month? Stop burning 2.6 Lakhs on internal HR overhead.
+                <!-- Changed display-1 to a responsive structure -->
+                <h1 class="responsive-heading text-white mb-2 mb-md-4">
+                    Hiring 2+ Employees This Month? Stop burning 2.6 Lakhs on internal HR overhead.
                 </h1>
 
-<p class="text-white mb-3">
-                   Get a dedicated, elite recruitment asset backed by premium sourcing networks for a flat, predictable monthly subscription. Minimum 3-month engagement.
-</p>
-                <a href="#calculator" class="btn btn-primary py-md-3 px-md-5 me-3 rounded-pill">
-                   Calculate my 90 day savings
+                <!-- Adjusted mobile paragraph margin -->
+                <p class="text-white small-mobile-text mb-3 mb-md-4">
+                    Get a dedicated, elite recruitment asset backed by premium sourcing networks for a flat, predictable monthly subscription. Minimum 3-month engagement.
+                </p>
+                
+                <!-- Adjusted mobile button padding -->
+                <a href="#calculator" class="btn btn-primary py-2 px-4 py-md-3 px-md-5 me-3 rounded-pill">
+                    Calculate my 90 day savings
                 </a>
             </div>
         </div>
     </div>
 </div>
     <!-- Industries We Serve -->
-    <div class="industry-ticker">
-    <div class="comparison-ticker">
-       <span class="old-price">Traditional Agencies: 8.33% CTC</span>
-        <span class="vs-badge">VS</span>
-       <span class="new-price">Wellocia: ₹25,000/Month</span>
+    <!-- Industries We Serve -->
+<div class="industry-ticker">
+    <div class="comparison-ticker d-flex align-items-center justify-content-center gap-2 flex-wrap">
+        <span class="old-price ticker-text">Traditional Agencies: 8.33% CTC</span>
+        <span class="vs-badge ticker-vs">VS</span>
+        <span class="new-price ticker-text">Wellocia: ₹25,000/Month</span>
     </div>
 </div>
     <!-- ══════════════════════════════════════════════════════
