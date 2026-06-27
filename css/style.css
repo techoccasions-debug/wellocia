@@ -4060,3 +4060,53 @@ textarea.modern-input{
     }
 
 }
+/* Styles specifically for mobile screens */
+@media (max-width: 767.98px) {
+    /* Controls the font size of the giant heading on mobile */
+    .responsive-heading {
+        font-size: 1.65rem !important; 
+        line-height: 1.3;
+        font-weight: 700;
+    }
+
+    /* Slightly reduces the paragraph text size so it doesn't crowd the screen */
+    .small-mobile-text {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+    }
+
+    /* Keeps the background image height contained and neat on mobile */
+    .hero-img {
+        object-fit: cover;
+        height: 70vh; /* Limits the banner size to 70% of the mobile screen height */
+    }
+}
+
+/* Styles for laptops and larger screens (Restores original design) */
+@media (min-width: 768px) {
+    .responsive-heading {
+        font-size: calc(1.625rem + 4.5vw); /* Matches Bootstrap's native display-1 scale */
+        line-height: 1.2;
+    }
+}
+@media (max-width: 767.98px) {
+    /* ... your existing mobile hero css ... */
+
+    /* Shrinks the overall padding of the ticker bar */
+    .industry-ticker {
+        padding: 10px 5px !important;
+    }
+
+    /* Scales down the text sizes so they fit nicely on one or two compact lines */
+    .ticker-text {
+        font-size: 0.85rem !important;
+        font-weight: 600;
+    }
+
+    /* Shrinks the VS badge so it doesn't overpower the text */
+    .ticker-vs {
+        font-size: 0.7rem !important;
+        padding: 3px 8px !important;
+        min-width: auto !important;
+    }
+}
