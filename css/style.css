@@ -4034,7 +4034,7 @@ textarea.modern-input{
     /* Fixes the background image height container */
     .hero-banner img, 
     .hero-img {
-        height: 55vh !important; /* Forcefully caps the banner height to 55% of the screen */
+        height: 45vh !important; /* Forcefully caps the banner height to 55% of the screen */
         object-fit: cover !important;
     }
 
