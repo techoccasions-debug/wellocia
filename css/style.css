@@ -4102,47 +4102,15 @@ textarea.modern-input{
     }
 }
 
-/* ==========================================
-    LAPTOPS & LARGER SCREENS (Restores original design)
-========================================== */
-@media (min-width: 768px) {
-    .responsive-heading {
-        font-size: calc(1.625rem + 4.5vw); 
-        line-height: 1.2;
-    }
-}
-/* ==========================================
-    LAPTOPS & LARGER SCREENS (Restores original design)
-========================================== */
-@media (min-width: 768px) {
-    .responsive-heading {
-        font-size: calc(1.625rem + 4.5vw); 
-        line-height: 1.2;
-    }
-}
-.overview-img{
-    height: 520px;
-    border-radius: 20px;
-    overflow: hidden;
+.overview-video{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
-.overview-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Tablet */
-@media (max-width: 991px){
-    .overview-img{
-        height: 420px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 767px){
-    .overview-img{
-        height: 280px;
-        margin-bottom: 10px;
-    }
+.overview-video iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:none;
+    display:block;
 }
