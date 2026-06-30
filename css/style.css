@@ -4981,3 +4981,38 @@ textarea.modern-input{
   border: none;
   display: block;
 }
+/* 🔥 Styled dropdown */
+#planSelect {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1E5E38;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none; /* removes default arrow styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* custom arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%231E5E38' d='M5.5 7l4.5 5 4.5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+/* hover */
+#planSelect:hover {
+    border-color: #1E5E38;
+    box-shadow: 0 0 0 3px rgba(30, 94, 56, 0.1);
+}
+
+/* focus */
+#planSelect:focus {
+    border-color: #2E7D4F;
+    box-shadow: 0 0 0 3px rgba(30, 94, 56, 0.2);
+}
