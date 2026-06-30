@@ -132,7 +132,7 @@
     <div class="comparison-ticker d-flex align-items-center justify-content-center gap-2 flex-wrap">
         <span class="old-price ticker-text">Traditional Agencies: 8.33% CTC</span>
         <span class="vs-badge ticker-vs">VS</span>
-        <span class="new-price ticker-text">Wellocia: ₹25,000/Month</span>
+        <span class="new-price ticker-text">Wellocia: ₹40,000/Month</span>
     </div>
 </div>
     <!-- ══════════════════════════════════════════════════════
@@ -220,7 +220,14 @@
         <div class="calculator-card">
 
             <div class="calculator-left">
-
+<div class="slider-group">
+    <label>Select Plan</label>
+    <select id="planSelect">
+        <option value="growth">Growth (₹40,000/mo)</option>
+        <option value="enterprise">Enterprise (₹90,000/mo)</option>
+        <option value="business">Business (₹1,80,000/mo)</option>
+    </select>
+</div>
                 <div class="slider-group">
                     <label>Hires Planned This Month</label>
 
@@ -267,7 +274,7 @@
 
                     <div class="cost-box featured">
                         <h6>Wellocia Subscription</h6>
-                        <span>₹75,000</span>
+                        <span id="wellociaCost">₹0</span>
                     </div>
 
                 </div>
@@ -531,49 +538,60 @@ Oil & Gas</h4>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-    <script>
+  <script>
 const hireSlider = document.getElementById("hireSlider");
 const salarySlider = document.getElementById("salarySlider");
+const planSelect = document.getElementById("planSelect");
 
 const hireCount = document.getElementById("hireCount");
 const salaryValue = document.getElementById("salaryValue");
 
 const agencyCost = document.getElementById("agencyCost");
 const savingAmount = document.getElementById("savingAmount");
+const wellociaCost = document.getElementById("wellociaCost");
 
 function formatINR(num) {
     return "₹" + Math.round(num).toLocaleString("en-IN");
 }
 
+const plans = {
+    growth: 40000,
+    enterprise: 90000,
+    business: 180000
+};
+
 function calculate() {
 
     const hires = parseInt(hireSlider.value);
     const salaryLPA = parseInt(salarySlider.value);
+    const plan = planSelect ? planSelect.value : "growth";
 
     hireCount.innerText = hires;
     salaryValue.innerText = salaryLPA;
 
     const annualSalary = salaryLPA * 100000;
 
-    // Traditional agency fee = 8.33% of CTC
     const agency = hires * annualSalary * 0.0833;
 
-    // Wellocia = ₹25k/month x 3 months
-    const wellocia = 75000;
+    const monthlyCost = plans[plan] || 40000;
+    const wellocia = monthlyCost * 3;
 
     const savings = agency - wellocia;
 
     agencyCost.innerText = formatINR(agency);
-    savingAmount.innerText = formatINR(savings > 0 ? savings : 0);
+    savingAmount.innerText = formatINR(Math.max(savings, 0));
+    wellociaCost.innerText = formatINR(wellocia);
 }
 
 hireSlider.addEventListener("input", calculate);
 salarySlider.addEventListener("input", calculate);
 
+if (planSelect) {
+    planSelect.addEventListener("change", calculate);
+}
+
 calculate();
 </script>
-
-
     <script src="js/main.js"></script>
 
 </body>
