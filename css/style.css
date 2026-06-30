@@ -5016,3 +5016,13 @@ textarea.modern-input{
     border-color: #2E7D4F;
     box-shadow: 0 0 0 3px rgba(30, 94, 56, 0.2);
 }
+.slider-group {
+    margin-bottom: 20px;
+}
+
+.slider-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1E5E38;
+}
