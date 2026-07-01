@@ -253,13 +253,6 @@ document.getElementById("thankYouBox").innerHTML = `
         Our recruitment team will review your profile and contact you shortly.
     </p>
 
-    <a href="PASTE_YOUR_WHATSAPP_CHANNEL_LINK_HERE"
-       target="_blank"
-       class="join-channel-btn">
-       <i class="fab fa-whatsapp"></i>
-<span>Join WhatsApp Channel For Job Updates</span>
-    </a>
-
 </div>
 `;
 
