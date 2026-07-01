@@ -5072,3 +5072,17 @@ textarea.modern-input{
         text-align:center;
     }
 }
+.mobile-swipe-hint{
+    display:none;
+}
+
+@media (max-width:768px){
+    .mobile-swipe-hint{
+        display:block;
+        text-align:center;
+        margin-bottom:15px;
+        font-size:.9rem;
+        color:#777;
+        font-weight:600;
+    }
+}
