@@ -5035,3 +5035,40 @@ textarea.modern-input{
     color: #1E5E38;
     text-align: center;
 }
+/* DESKTOP */
+.comparison-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* MOBILE SLIDER */
+@media (max-width:768px){
+
+    .comparison-grid{
+        display:flex;
+        overflow-x:auto;
+        gap:20px;
+        padding-bottom:15px;
+
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+
+        scrollbar-width:none;
+    }
+
+    .comparison-grid::-webkit-scrollbar{
+        display:none;
+    }
+
+    .card{
+        flex:0 0 90%;
+        min-width:90%;
+        scroll-snap-align:center;
+    }
+
+    .sourcing-header h1{
+        font-size:1.4rem;
+        text-align:center;
+    }
+}
