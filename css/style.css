@@ -6023,3 +6023,419 @@ textarea.modern-input{
 .navbar-nav .nav-link {
     text-transform: none !important;
 }
+
+
+/* ═══════════════════════════════════════
+   WELLOCIA MISSION / VISION SECTION
+══════════════════════════════════════════ */
+
+.wm-section {
+    background: var(--light);
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+/* HEADER */
+.wm-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.wm-title {
+    color: var(--dark);
+    letter-spacing: -0.5px;
+}
+
+.wm-title span {
+    color: var(--primary);
+}
+
+.wm-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* LEFT TEXT */
+.wm-text-block h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.wm-text-block p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: var(--text);
+    opacity: .9;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+/* GRID */
+.wm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* CARD */
+.wm-card {
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    transition: all 0.3s ease;
+}
+
+.wm-card:hover {
+    transform: translateY(-4px);
+    background: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 12px 24px rgba(22, 43, 30, 0.05);
+}
+
+/* FULL CARD */
+.wm-card.full {
+    grid-column: span 2;
+}
+
+/* ICON */
+.wm-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: var(--secondary);
+}
+
+.wm-icon.geo { color: var(--primary); }
+.wm-icon.lightning { color: var(--accent); }
+.wm-icon.shield { color: var(--muted); }
+
+/* FLEX CARD */
+.wm-flex {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+/* TEXT INSIDE CARDS */
+.wm-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.wm-card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+    .wm-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wm-card.full {
+        grid-column: auto;
+    }
+}
+/* ==========================================================================
+   PRODUCTION-GRADE DESIGN SYSTEM (Scoped strictly to avoid style bleed)
+   ========================================================================== */
+
+.wellocia-premium-framework {
+    --fluid-bounce: cubic-bezier(0.25, 1, 0.5, 1);
+    --font-mono-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* --- Structural Background Blocks --- */
+.wellocia-premium-framework .core-verticals-layout {
+    background-color: var(--light);
+    padding: 2rem 0;
+}
+
+.wellocia-premium-framework .geo-footprint-layout {
+    background-color: var(--soft);
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--border);
+}
+
+/* --- Structural Header System --- */
+.wellocia-premium-framework .meta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono-code);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.wellocia-premium-framework .pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.wellocia-premium-framework .display-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--dark);
+}
+
+.wellocia-premium-framework .display-caption {
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+/* --- Custom Grid Border Architecture (Clean Slate Look) --- */
+.wellocia-premium-framework .custom-grid-border {
+    border: 1px solid var(--border);
+    background-color: #ffffff;
+}
+
+.wellocia-premium-framework .project-panel-card {
+    position: relative;
+    border-right: 1px solid var(--border);
+}
+
+.wellocia-premium-framework .project-panel-card:last-child {
+    border-right: none;
+}
+
+.wellocia-premium-framework .panel-inner {
+    padding: 3.5rem 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #ffffff;
+    transition: background-color 0.4s var(--fluid-bounce);
+}
+
+.wellocia-premium-framework .panel-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.wellocia-premium-framework .panel-index {
+    font-family: var(--font-mono-code);
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.wellocia-premium-framework .panel-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    background-color: var(--light);
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.wellocia-premium-framework .panel-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    margin-bottom: 1.25rem;
+}
+
+.wellocia-premium-framework .panel-body {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* Micro-Interaction Highlight Overlay line */
+.wellocia-premium-framework .panel-corner-line {
+    position: absolute;
+    bottom: 0; left: 0; width: 0%; height: 3px;
+    background-color: var(--accent);
+    transition: width 0.4s var(--fluid-bounce);
+}
+
+/* Premium Card Hover State Mechanics */
+@media (min-width: 992px) {
+    .wellocia-premium-framework .project-panel-card:hover .panel-inner {
+        background-color: var(--light);
+    }
+    .wellocia-premium-framework .project-panel-card:hover .panel-corner-line {
+        width: 100%;
+    }
+}
+
+/* --- Geographic Layout Architecture --- */
+.wellocia-premium-framework .geo-accented-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--dark);
+}
+
+.wellocia-premium-framework .geometric-shape {
+    width: 40px;
+    height: 4px;
+    background-color: var(--primary);
+    margin-top: 2rem;
+}
+
+.wellocia-premium-framework .lead-narrative-text {
+    font-size: 1.4rem;
+    line-height: 1.75;
+    color: var(--dark);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+}
+
+.wellocia-premium-framework .sub-narrative-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 3rem;
+}
+
+/* Editorial Native Hypertext Underlining */
+.wellocia-premium-framework .text-anchor-token {
+    font-weight: 700;
+    color: var(--primary);
+    box-shadow: inset 0 -3px 0 var(--border);
+    transition: box-shadow 0.25s ease;
+    padding: 0 1px;
+}
+
+.wellocia-premium-framework .text-anchor-token:hover {
+    box-shadow: inset 0 -12px 0 var(--border);
+}
+
+/* --- Editorial Embedded Action Link Banner --- */
+.wellocia-premium-framework .contextual-card-banner {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.wellocia-premium-framework .banner-line {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background-color: var(--accent);
+}
+
+.wellocia-premium-framework .banner-body h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+}
+
+.wellocia-premium-framework .interactive-action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.wellocia-premium-framework .link-circle-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    background-color: #ffffff;
+    flex-shrink: 0;
+    transition: var(--fluid-bounce) 0.35s;
+}
+
+.wellocia-premium-framework .link-circle-arrow svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.35s var(--fluid-bounce);
+}
+
+/* Hover Mechanics for Contextual Banner */
+.wellocia-premium-framework .interactive-action-link:hover {
+    color: var(--primary-hover) !important;
+}
+
+.wellocia-premium-framework .interactive-action-link:hover .link-circle-arrow {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.wellocia-premium-framework .interactive-action-link:hover .link-circle-arrow svg {
+    transform: translate(2px, -2px);
+}
+
+/* --- Layout Sticky Engine & Breakpoints --- */
+@media (min-width: 992px) {
+    .wellocia-premium-framework .sticky-side-panel {
+        position: sticky;
+        top: 5rem;
+        height: fit-content;
+    }
+}
+
+@media (max-width: 991px) {
+    .wellocia-premium-framework .display-title {
+        font-size: 2.5rem;
+    }
+    .wellocia-premium-framework .geo-accented-heading {
+        font-size: 1.85rem;
+    }
+    .wellocia-premium-framework .project-panel-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+    .wellocia-premium-framework .project-panel-card:last-child {
+        border-bottom: none;
+    }
+    .wellocia-premium-framework .panel-inner {
+        padding: 2.5rem 1.5rem;
+    }
+    .wellocia-premium-framework .lead-narrative-text {
+        font-size: 1.2rem;
+    }
+}
