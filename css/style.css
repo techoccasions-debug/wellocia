@@ -5026,3 +5026,12 @@ textarea.modern-input{
     margin-bottom: 8px;
     color: #1E5E38;
 }
+#industries h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    color: #1E5E38;
+    text-align: center;
+}
