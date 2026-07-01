@@ -6020,3 +6020,6 @@ textarea.modern-input{
         font-size:1.2rem;
     }
 }
+.navbar-nav .nav-link {
+    text-transform: none !important;
+}
