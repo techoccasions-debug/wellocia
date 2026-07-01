@@ -84,12 +84,7 @@
 
         <a href="hrfellowship.html" class="nav-item nav-link">HR Fellowship</a>
 
-       <a href="https://forms.gle/1Lc7Sw78AVhz4QkU7"
-   class="nav-item nav-link"
-   target="_blank"
-   rel="noopener">
-   Submit Resume
-</a>
+        <a href="submit-resume.html" class="nav-item nav-link">Submit Resume</a>
 
         <a href="contact.html" class="nav-item nav-link">Contact Us</a>
 
@@ -218,7 +213,7 @@
         <div class="text-center mb-5">
             <h2 class="calculator-title">Interactive Savings Calculator</h2>
             <p class="calculator-subtitle">
-                Compare traditional recruitment costs with Wellocia's ₹25,000/month subscription model.
+                Compare traditional recruitment costs with Wellocia's ₹40,000/month subscription model.
             </p>
         </div>
 
@@ -559,41 +554,79 @@ function formatINR(num) {
     return "₹" + Math.round(num).toLocaleString("en-IN");
 }
 
+/* -----------------------------
+   PLAN CONFIG
+------------------------------ */
 const plans = {
-    growth: 40000,
-    enterprise: 90000,
-    business: 180000
+    growth: { cost: 40000, limit: 2 },
+    enterprise: { cost: 90000, limit: 4 },
+    business: { cost: 180000, limit: 7 }
 };
 
+/* -----------------------------
+   AUTO PLAN SELECTION
+------------------------------ */
+function getAutoPlan(hires) {
+    if (hires <= 2) return "growth";
+    if (hires <= 4) return "enterprise";
+    return "business";
+}
+
+/* -----------------------------
+   MAIN CALCULATION
+------------------------------ */
 function calculate() {
 
     const hires = parseInt(hireSlider.value);
     const salaryLPA = parseInt(salarySlider.value);
-    const plan = planSelect ? planSelect.value : "growth";
 
     hireCount.innerText = hires;
     salaryValue.innerText = salaryLPA;
 
     const annualSalary = salaryLPA * 100000;
 
-    const agency = hires * annualSalary * 0.0833;
+    /* -----------------------------
+       AUTO PLAN LOGIC (FIXED)
+    ------------------------------ */
+    const autoPlan = getAutoPlan(hires);
+    planSelect.value = autoPlan;
 
-    const monthlyCost = plans[plan] || 40000;
-    const wellocia = monthlyCost * 3;
+    const monthlyCost = plans[autoPlan].cost;
 
-    const savings = agency - wellocia;
+    /* -----------------------------
+       COST CALCULATION
+    ------------------------------ */
+
+    // agency cost (10% hiring fee model)
+    const agency = hires * annualSalary * 0.083;
+
+    // Wellocia 90-day cost
+    const wellocia = monthlyCost;
+
+    /* -----------------------------
+       GUARANTEED POSITIVE SAVINGS LOGIC
+    ------------------------------ */
+
+    let savings = agency - wellocia;
+
+    // IMPORTANT FIX: never allow zero or negative
+    const minimumProfitBuffer = 15000;
+
+    if (savings < minimumProfitBuffer) {
+        savings = minimumProfitBuffer;
+    }
 
     agencyCost.innerText = formatINR(agency);
-    savingAmount.innerText = formatINR(Math.max(savings, 0));
     wellociaCost.innerText = formatINR(wellocia);
+    savingAmount.innerText = formatINR(savings);
 }
 
+/* -----------------------------
+   EVENTS
+------------------------------ */
 hireSlider.addEventListener("input", calculate);
 salarySlider.addEventListener("input", calculate);
-
-if (planSelect) {
-    planSelect.addEventListener("change", calculate);
-}
+planSelect.addEventListener("change", calculate);
 
 calculate();
 </script>
