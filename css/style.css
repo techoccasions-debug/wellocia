@@ -1219,47 +1219,150 @@ footer hr {
 /* ===================================
    PREMIUM MOVING INDUSTRIES BAR
 =================================== */
+/* ==========================================
+   PREMIUM INDUSTRY TICKER
+========================================== */
 
-.industry-ticker {
+.industry-ticker{
     background: var(--accent);
-    padding: 10px 15px;
-    border-top: 1px solid rgba(22, 43, 30, 0.08);
-    border-bottom: 1px solid rgba(22, 43, 30, 0.08);
+    position: relative;
+    overflow: hidden;
+    padding: 12px 0;
+    border-top: 1px solid rgba(22,43,30,.08);
+    border-bottom: 1px solid rgba(22,43,30,.08);
+    white-space: nowrap;
 }
 
-.comparison-ticker {
-    display: flex;
-    justify-content: center;
+.ticker-track{
+    display: inline-flex;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 22px;
+    min-width: max-content;
+    animation: ticker-scroll 40s linear infinite;
+    will-change: transform;
 }
 
-.old-price {
-    color: rgba(22,43,30,.70);
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: line-through;
-}
-
-.vs-badge {
-    background: var(--dark);
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.new-price {
-    background: #fff;
+.ticker-track span{
     color: var(--dark);
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 800;
-    box-shadow: 0 4px 12px rgba(22,43,30,.12);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    flex-shrink: 0;
+}
+
+/* separator dots */
+
+.ticker-track span.separator{
+    color: rgba(22,43,30,.55);
+    font-size: 18px;
+    font-weight: 900;
+}
+
+/* smooth animation */
+
+@keyframes ticker-scroll{
+    from{
+        transform: translateX(-50%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+/* pause on hover */
+
+.industry-ticker:hover .ticker-track{
+    animation-play-state: paused;
+}
+
+/* ==========================
+   LARGE DESKTOP
+========================== */
+
+@media (min-width:1400px){
+
+.ticker-track{
+    animation-duration:45s;
+}
+
+.ticker-track span{
+    font-size:15px;
+}
+}
+
+/* ==========================
+   LAPTOP
+========================== */
+
+@media (max-width:1199px){
+
+.ticker-track{
+    gap:18px;
+}
+
+.ticker-track span{
+    font-size:14px;
+}
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:991px){
+
+.industry-ticker{
+    padding:10px 0;
+}
+
+.ticker-track{
+    gap:16px;
+    animation-duration:35s;
+}
+
+.ticker-track span{
+    font-size:13px;
+}
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:767px){
+
+.industry-ticker{
+    padding:9px 0;
+}
+
+.ticker-track{
+    gap:14px;
+    animation-duration:28s;
+}
+
+.ticker-track span{
+    font-size:12px;
+    font-weight:600;
+}
+
+.ticker-track span.separator{
+    font-size:14px;
+}
+}
+
+/* ==========================
+   SMALL IPHONES
+========================== */
+
+@media (max-width:375px){
+
+.ticker-track{
+    animation-duration:24s;
+}
+
+.ticker-track span{
+    font-size:11px;
+}
 }
 
 .section-subtitle {
@@ -5150,5 +5253,770 @@ textarea.modern-input{
         font-size:.9rem;
         color:#777;
         font-weight:600;
+    }
+}
+/* ==========================================
+   WELLLOCIA PREMIUM FOOTER V2
+========================================== */
+
+.wellocia-footer{
+    background:
+    radial-gradient(circle at top left,
+    rgba(201,134,90,.10),
+    transparent 35%),
+    linear-gradient(180deg,#041321 0%,#020d17 100%);
+    color:#d7dde3;
+    position:relative;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+.wellocia-footer .container-fluid{
+    max-width:1500px;
+    margin:auto;
+    padding:55px 40px 0;
+}
+
+/* ==========================
+   TOP SECTION
+========================== */
+
+.footer-top{
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+
+.wellocia-footer h4{
+    color:#D6A04D;
+    font-size:17px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    margin-bottom:24px;
+    position:relative;
+}
+
+.wellocia-footer h4::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:38px;
+    height:2px;
+    background:#D6A04D;
+}
+
+/* ==========================
+   LOGO
+========================== */
+
+.footer-brand img{
+    max-width:220px;
+    margin-bottom:22px;
+}
+
+.footer-brand p{
+    font-size:14px;
+    line-height:1.9;
+    color:#c3ccd5;
+    margin-bottom:25px;
+}
+
+/* ==========================
+   BENEFITS
+========================== */
+
+.footer-benefits{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-benefits div{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#fff;
+    font-size:14px;
+}
+
+.footer-benefits i{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:1px solid rgba(214,160,77,.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#D6A04D;
+    font-size:14px;
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+.wellocia-footer ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.wellocia-footer ul li{
+    margin-bottom:10px;
+}
+
+.wellocia-footer ul li a{
+    color:#d4d4d4;
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s ease;
+    display:flex;
+    align-items:center;
+}
+
+.wellocia-footer ul li a::before{
+    content:"›";
+    color:#D6A04D;
+    margin-right:8px;
+    font-size:18px;
+}
+
+.wellocia-footer ul li a:hover{
+    color:#D6A04D;
+    transform:translateX(4px);
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:18px;
+    font-size:14px;
+    color:#fff;
+}
+
+.contact-item i{
+    color:#D6A04D;
+    width:18px;
+    font-size:17px;
+    margin-top:2px;
+}
+
+/* ==========================
+   SOCIAL
+========================== */
+
+.footer-social{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+    margin-bottom:22px;
+}
+
+.footer-social a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.18);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    background:#D6A04D;
+    border-color:#D6A04D;
+    color:#041321;
+    transform:translateY(-3px);
+}
+
+/* ==========================
+   CTA BOX
+========================== */
+
+.footer-cta{
+    border:1px solid rgba(214,160,77,.35);
+    border-radius:10px;
+    padding:18px;
+    background:rgba(255,255,255,.02);
+    transition:.3s;
+}
+
+.footer-cta:hover{
+    border-color:#D6A04D;
+    transform:translateY(-4px);
+}
+
+.footer-cta h5{
+    color:#fff;
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.footer-cta p{
+    color:#c9d2da;
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+.footer-cta a{
+    color:#D6A04D;
+    font-weight:600;
+    text-decoration:none;
+}
+
+/* ==========================
+   MIDDLE STRIP
+========================== */
+
+.footer-middle{
+    display:grid;
+    grid-template-columns:260px 1fr 380px;
+    gap:30px;
+    align-items:center;
+    padding:28px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.footer-tagline{
+    color:#D6A04D;
+    font-size:20px;
+    font-weight:700;
+}
+
+.footer-description{
+    font-size:14px;
+    line-height:1.8;
+    color:#d0d7de;
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.footer-stats{
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+}
+
+.footer-stats h3{
+    color:#D6A04D;
+    font-size:28px;
+    margin-bottom:4px;
+    font-weight:700;
+}
+
+.footer-stats span{
+    color:#d0d0d0;
+    font-size:13px;
+}
+
+/* ==========================
+   LEGAL LINKS
+========================== */
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px 0;
+}
+
+.footer-links a{
+    color:#d5d5d5;
+    text-decoration:none;
+    font-size:13px;
+    transition:.25s;
+}
+
+.footer-links a:hover{
+    color:#D6A04D;
+}
+
+/* ==========================
+   COPYRIGHT
+========================== */
+
+.copyright{
+    text-align:center;
+    padding:15px 0 25px;
+    border-top:1px dashed rgba(255,255,255,.08);
+    color:#b7c1ca;
+    font-size:13px;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media(max-width:1199px){
+
+.footer-middle{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.footer-stats{
+    justify-content:center;
+    gap:35px;
+}
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.wellocia-footer .container-fluid{
+    padding:45px 25px 0;
+}
+
+.wellocia-footer h4{
+    margin-top:10px;
+}
+
+.footer-brand img{
+    max-width:180px;
+}
+
+.footer-middle{
+    gap:20px;
+}
+
+.footer-stats{
+    flex-direction:column;
+    gap:20px;
+}
+
+.footer-links{
+    gap:12px;
+}
+
+.footer-links a{
+    font-size:12px;
+}
+}
+/* ==================================================
+   WELLLOCIA MODERN PREMIUM FORM
+================================================== */
+
+.wellocia-form-card{
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:38px;
+
+    height:100%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 1px 2px rgba(0,0,0,.03),
+    0 12px 30px rgba(0,0,0,.04);
+}
+
+/* Top Accent */
+
+.wellocia-form-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary),
+        var(--accent)
+    );
+}
+
+/* ==================================================
+   BADGE
+================================================== */
+
+.wellocia-form-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(30,94,56,.08);
+
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+/* ==================================================
+   HEADING
+================================================== */
+
+.wellocia-form-card h3{
+
+    color:var(--dark);
+
+    font-size:1.9rem;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    margin-bottom:16px;
+}
+
+.wellocia-form-intro{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+/* ==================================================
+   FORM GRID
+================================================== */
+
+.wellocia-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:16px;
+}
+
+.field-group{
+    margin-bottom:16px;
+}
+
+/* ==================================================
+   LABELS
+================================================== */
+
+.field-group label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:var(--dark);
+}
+
+/* ==================================================
+   INPUTS
+================================================== */
+
+.field-group input,
+.field-group select,
+.field-group textarea{
+
+    width:100%;
+
+    background:var(--light);
+
+    border:1px solid transparent;
+
+    border-radius:14px;
+
+    padding:15px 16px;
+
+    color:var(--dark);
+
+    font-size:15px;
+
+    transition:all .25s ease;
+}
+
+.field-group textarea{
+
+    min-height:130px;
+
+    resize:vertical;
+}
+
+/* Placeholder */
+
+.field-group input::placeholder,
+.field-group textarea::placeholder{
+
+    color:#8a978f;
+}
+
+/* Focus */
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus{
+
+    outline:none;
+
+    background:#fff;
+
+    border-color:var(--primary);
+
+    box-shadow:
+    0 0 0 4px rgba(30,94,56,.08);
+}
+
+/* ==================================================
+   SELECT
+================================================== */
+
+.field-group select{
+
+    appearance:none;
+
+    cursor:pointer;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 20 20'%3E%3Cpath fill='%231E5E38' d='M5.5 7l4.5 5 4.5-5z'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 16px center;
+
+    padding-right:48px;
+}
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+.wellocia-submit-btn{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:all .25s ease;
+
+    margin-top:10px;
+}
+
+.wellocia-submit-btn:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
+}
+
+/* ==================================================
+   TRUST ROW
+================================================== */
+
+.wellocia-trust-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+    margin-top:18px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:500;
+}
+
+/* ==================================================
+   THANK YOU
+================================================== */
+
+#thankYouBox{
+
+    background:var(--light);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:24px;
+
+    color:var(--dark);
+
+    line-height:1.8;
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:768px){
+
+    .wellocia-form-card{
+        padding:26px;
+    }
+
+    .wellocia-grid{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .wellocia-form-card h3{
+        font-size:1.6rem;
+    }
+
+    .wellocia-form-intro{
+        font-size:14px;
+    }
+
+    .wellocia-trust-row{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+}
+/* ==========================================
+   CORE SPECIALIZED VERTICALS
+========================================== */
+
+.specialized-verticals{
+    margin-top:28px;
+}
+
+.verticals-header{
+    margin-bottom:18px;
+}
+
+.verticals-header h3{
+    font-size:1.4rem;
+    font-weight:800;
+    color:var(--dark);
+    margin:0;
+}
+
+.vertical-card{
+
+    background:#fff;
+
+    border:1px solid rgba(30,94,56,.08);
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    margin-bottom:14px;
+
+    transition:.3s ease;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.vertical-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:4px;
+    height:100%;
+
+    background:var(--primary);
+}
+
+.vertical-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 30px rgba(30,94,56,.08);
+}
+
+.vertical-title{
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+}
+
+.vertical-card p{
+
+    margin:0;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:#6b7280;
+}
+
+@media(max-width:768px){
+
+    .vertical-card{
+        padding:16px;
+    }
+
+    .verticals-header h3{
+        font-size:1.2rem;
     }
 }
